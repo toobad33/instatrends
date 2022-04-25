@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@mantine/core";
+import loading from "../../loading.gif";
 
 function ScatterPlotLikesLength() {
   const [isPlotRendered, setRenderedPlot] = useState(null);
@@ -128,7 +129,7 @@ function ScatterPlotLikesLength() {
       </p>
       <p style={{ fontSize: "15px", textAlign: "left" }}>Nombre de likes</p>
       <div className="spinner">
-        {!isPlotRendered && <Loader color="pink" />}
+        {!isPlotRendered && <img src={loading} alt="Logo" width={200} height={200} />}
       </div>
 
       <canvas width="1000" height="480" ref={ref} />
